@@ -1,0 +1,26 @@
+.description {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  @media (min-width: $desktop-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.description__text {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.45;
+  color: rgb(135, 135, 135);
+  span {
+    color: #000;
+    font-weight: 500;
+  }
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    text-align: center;
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}

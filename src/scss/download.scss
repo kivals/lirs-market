@@ -1,0 +1,16 @@
+.download {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.download--item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 10px;
+  @media (min-width: $tablet-width) {
+    margin-right: 15px;
+  }
+}

@@ -8,7 +8,9 @@ import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
 import rename from 'gulp-rename'
 import browser from 'browser-sync';
-
+import squoosh from 'gulp-libsquoosh';
+import svgo from 'gulp-svgmin';
+import svgstore from 'gulp-svgstore';
 
 const SOURCE_DIR = 'src';
 const BUILD_DIR = 'build';
@@ -24,8 +26,10 @@ const PATH = {
         html: SOURCE_DIR + '/*.html',
         scss: SOURCE_DIR + '/scss/style.scss',
         images: SOURCE_DIR + '/img/**/*.{png,jpg}',
+        svg: SOURCE_DIR + '/img/**/*.svg',
         fonts: SOURCE_DIR + '/fonts/*.{woff2,woff}',
         ico: SOURCE_DIR + '/*.ico',
+        spriteSvg: SOURCE_DIR + '/img/icons/sprite/*.svg'
     }
 }
 
@@ -67,6 +71,40 @@ const html = () => {
         .pipe(gulp.dest(BUILD_DIR));
 }
 
+// Images
+const optimizeImages = () => {
+  return gulp.src(PATH.source.images)
+    .pipe(squoosh())
+    .pipe(gulp.dest(PATH.build.images))
+}
+
+// WebP
+const createWebp = () => {
+  return gulp.src(PATH.source.images)
+    .pipe(squoosh({
+      webp: {}
+    }))
+    .pipe(gulp.dest(PATH.build.images))
+}
+
+// SVG
+const svg = () => {
+  return gulp.src([PATH.source.svg, `!${PATH.source.spriteSvg}`])
+    .pipe(svgo())
+    .pipe(gulp.dest(PATH.build.images));
+}
+
+// SVG sprite
+const sprite = () => {
+  return gulp.src(PATH.source.spriteSvg)
+    .pipe(svgo())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('sprite.svg'))
+    .pipe(gulp.dest(PATH.build.images));
+}
+
 // Server
 const server = (done) => {
   browser.init({
@@ -88,7 +126,7 @@ const reload = (done) => {
 
 // Watcher
 const watcher = () => {
-  gulp.watch(`${SOURCE_DIR}/sass/**/*.scss`, gulp.series(styles));
+  gulp.watch(`${SOURCE_DIR}/scss/**/*.scss`, gulp.series(styles));
   gulp.watch(`${SOURCE_DIR}/*.html`, gulp.series(html, reload));
 }
 
@@ -100,9 +138,13 @@ const watcher = () => {
 export default gulp.series(
   clean,
   copy,
+  optimizeImages,
   gulp.parallel(
     styles,
-    html
+    html,
+    svg,
+    sprite,
+    createWebp
   ),
   gulp.series(
   server,

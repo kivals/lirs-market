@@ -1,6 +1,17 @@
 @import "common/variables";
 @import "common/mixins";
 @import "common/fonts";
+@import "common/nullable";
+@import "common/container";
 // UI blocks
 @import "ui/visually-hidden";
 // Layout blocks
+@import "layout/page-body";
+@import "layout/footer";
+
+@import "intro";
+@import "download";
+@import "description";
+@import "features";
+@import "advantage";
+@import "available";

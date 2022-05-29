@@ -1,0 +1,95 @@
+.features {
+  background-color: #f2f2f2;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.features--title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 1.23;
+  font-weight: 600;
+  color: #000;
+  text-align: center;
+  @media (min-width: $desktop-width) {
+    margin-bottom: 40px;
+  }
+}
+
+.features--text {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #595959;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features--list {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+.features--item {
+  margin-bottom: 30px;
+  &__1 {
+    & .features--item-title::before {
+      background-image: url(../img/market.png);
+    }
+  }
+
+  &__2 {
+    & .features--item-title::before {
+      background-image: url(../img/search.svg);
+    }
+  }
+
+  &__3 {
+    & .features--item-title::before {
+      background-image: url(../img/resume.png);
+    }
+  }
+
+  &__4 {
+    & .features--item-title::before {
+      background-image: url(../img/tour.png);
+    }
+  }
+  @media (min-width: $desktop-width) {
+    width: 22%;
+  }
+}
+
+.features--item-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 35px;
+  line-height: 1.35;
+  color: #000;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+
+  &::before {
+    content: "";
+    width: 96px;
+    height: 96px;
+    margin-bottom: 25px;
+  }
+}
+
+.features--item-text {
+  font-size: 23px;
+  line-height: 1.45;
+  font-weight: 300;
+  text-align: center;
+  @media (min-width: $desktop-width) {
+    font-size: 16px;
+  }
+}
