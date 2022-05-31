@@ -43,6 +43,9 @@ const copy = (done) => {
   gulp.src([
     PATH.source.fonts,
     PATH.source.ico,
+    SOURCE_DIR + '/robots.txt',
+    SOURCE_DIR + '/sitemap.xml',
+
   ], {
     base: SOURCE_DIR
   })

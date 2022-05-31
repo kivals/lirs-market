@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 42px;
+  font-size: 39px;
   line-height: 1.23;
   padding-bottom: 18px;
   font-weight: 600;
@@ -37,15 +37,17 @@
   margin-bottom: 18px;
   &:before {
     content: '';
-    background-image: url(../img/logo.png);
-    height: 100px;
-    width: 100px;
-    margin-bottom: -6px;
+    background-image: url(../img/logo2.png);
+    height: 68px;
+    width: 61px;
+    @media (min-width: $tablet-width) {
+      margin-right: 20px;
+    }
   }
   @media (min-width: $tablet-width) {
     margin-bottom: 35px;
     font-size: 52px;
-    align-items: end;
+    align-items: first baseline;
     flex-direction: row;
   }
   @media (min-width: $desktop-width) {
@@ -56,7 +58,7 @@
 .intro__text {
   color: #fff;
   font-size: 22px;
-  text-align: center;
+  text-align: left;
   font-weight: 400;
   line-height: 1.45;
   opacity: .9;
