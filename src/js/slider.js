@@ -1,4 +1,3 @@
-console.log('SLIDER JS');
 const screenSlider = new Swiper('.screens__swiper', {
   watchOverflow: true,
   // centeredSlides: true,
