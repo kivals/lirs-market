@@ -1,8 +1,7 @@
 .download {
-  @media (min-width: $tablet-width) {
-    display: flex;
-    justify-content: center;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .download--item {
@@ -10,6 +9,7 @@
   flex-direction: row;
   justify-content: center;
   margin-bottom: 10px;
+  margin-right: 20px;
   @media (min-width: $tablet-width) {
     margin-right: 15px;
   }
