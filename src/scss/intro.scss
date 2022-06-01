@@ -1,8 +1,14 @@
 .intro {
   height: 100vh;
-  padding-top: 20px;
   background-color: #3a3a42;
   @media (min-width: $tablet-width) {
+    background-image: url("../img/intro/banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+  }
+  @media (orientation: landscape) {
     background-image: url("../img/intro/banner.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -12,19 +18,26 @@
 }
 
 .intro-wrapper {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
-  background-image: url("../img/intro/banner-mobile.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
+  @media (min-width: $mobile-width-only) and (orientation: portrait) and (min-height: 525px) {
+    background-image: url("../img/intro/banner-mobile.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+  }
+  @media (orientation: landscape) {
+    align-items: flex-start;
+  }
   @media (min-width: $tablet-width) {
     background: none;
     align-items: flex-start;
+    padding-bottom: 15vh;
   }
   @media (min-width: $desktop-width) {
     margin-left: 250px;
@@ -105,8 +118,17 @@
   }
 }
 
-.intro__download .download--item{
+.intro__download .download--item {
+  border: 2px solid rgba($brand-text-color, .7);
+  border-radius: 7px;
+  overflow: hidden;
   svg {
     height: 40px;
+    @media (min-width: $tablet-width) {
+      height: 60px;
+    }
+    @media (min-width: $desktop-width) {
+      height: 70px;
+    }
   }
 }
