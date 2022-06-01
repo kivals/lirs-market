@@ -1,0 +1,29 @@
+.reviews {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.reviews__img {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.reviews__swiper-pagination {
+  display: flex;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    background-color: #fff;
+    opacity: .8;
+    width: 12px;
+    height: 12px;
+    border: 2px solid $brand-background-color;
+  }
+}
+
+.reviews__swiper-pagination {
+  .swiper-pagination-bullet-active {
+    background: $brand-text-color;
+    opacity: 1;
+    border: 2px solid $brand-background-color;
+  }
+}

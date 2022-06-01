@@ -30,3 +30,36 @@ const screenSlider = new Swiper('.screens__swiper', {
     },
   }
 });
+
+const reviewsSlider = new Swiper('.reviews__swiper', {
+  watchOverflow: true,
+  // centeredSlides: true,
+  // spaceBetween: 20,
+  // slidesPerView: 1.2,
+  loop: true,
+  // initialSlide: 2.2,
+  pagination: {
+    el: '.reviews__swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+    380: {
+      slidesPerView: 1.2,
+    },
+    450: {
+      slidesPerView: 1.5,
+    },
+    510: {
+      slidesPerView: 1.7,
+    },
+    950: {
+      slidesPerView: 2.6,
+    },
+    1249: {
+      slidesPerView: 3.5,
+    },
+  }
+});
