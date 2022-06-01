@@ -11,6 +11,7 @@ import browser from 'browser-sync';
 import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
 import svgstore from 'gulp-svgstore';
+import minify from 'gulp-minify';
 
 const SOURCE_DIR = 'src';
 const BUILD_DIR = 'build';
@@ -19,13 +20,15 @@ const PATH = {
     build: {
         html: BUILD_DIR + "/",
         css: BUILD_DIR + "/css/",
+        js: BUILD_DIR + "/js/",
         images: BUILD_DIR + "/img/",
         fonts: BUILD_DIR + "/fonts/",
     },
     source: {
         html: SOURCE_DIR + '/*.html',
         scss: SOURCE_DIR + '/scss/style.scss',
-        images: SOURCE_DIR + '/img/**/*.{png,jpg}',
+        js: SOURCE_DIR + '/js/*.js',
+        images: SOURCE_DIR + '/img/**/**/*.{png,jpg}',
         svg: SOURCE_DIR + '/img/**/*.svg',
         fonts: SOURCE_DIR + '/fonts/*.{woff2,woff}',
         ico: SOURCE_DIR + '/*.ico',
@@ -108,6 +111,18 @@ const sprite = () => {
     .pipe(gulp.dest(PATH.build.images));
 }
 
+// Scripts
+const scripts = () => {
+  return gulp.src(PATH.source.js)
+    .pipe(minify({
+      ext:{
+        min:'.min.js'
+      }
+    }))
+    .pipe(gulp.dest(PATH.build.js))
+    .pipe(browser.stream());
+}
+
 // Server
 const server = (done) => {
   browser.init({
@@ -130,6 +145,7 @@ const reload = (done) => {
 // Watcher
 const watcher = () => {
   gulp.watch(`${SOURCE_DIR}/scss/**/*.scss`, gulp.series(styles));
+  gulp.watch(`${SOURCE_DIR}/js/*.js`, gulp.series(scripts));
   gulp.watch(`${SOURCE_DIR}/*.html`, gulp.series(html, reload));
 }
 
@@ -145,6 +161,7 @@ export default gulp.series(
   gulp.parallel(
     styles,
     html,
+    scripts,
     svg,
     sprite,
     createWebp

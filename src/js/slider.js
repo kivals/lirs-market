@@ -1,0 +1,33 @@
+console.log('SLIDER JS');
+const screenSlider = new Swiper('.screens__swiper', {
+  watchOverflow: true,
+  // centeredSlides: true,
+  // spaceBetween: 20,
+  // slidesPerView: 1.2,
+  loop: true,
+  // initialSlide: 2.2,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  breakpoints: {
+    320: {
+      slidesPerView: 1.2,
+    },
+    380: {
+      slidesPerView: 1.3,
+    },
+    415: {
+      slidesPerView: 1.5,
+    },
+    630: {
+      slidesPerView: 2.3,
+    },
+    950: {
+      slidesPerView: 3.4,
+    },
+    1249: {
+      slidesPerView: 4.5,
+    },
+  }
+});
