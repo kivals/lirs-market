@@ -4,6 +4,7 @@ const screenSlider = new Swiper('.screens__swiper', {
   // spaceBetween: 20,
   // slidesPerView: 1.2,
   loop: true,
+  speed: 600,
   // initialSlide: 2.2,
     pagination: {
       el: '.swiper-pagination',
@@ -33,6 +34,7 @@ const screenSlider = new Swiper('.screens__swiper', {
 
 const reviewsSlider = new Swiper('.reviews__swiper', {
   watchOverflow: true,
+  speed: 600,
   // centeredSlides: true,
   // spaceBetween: 20,
   // slidesPerView: 1.2,
@@ -55,11 +57,8 @@ const reviewsSlider = new Swiper('.reviews__swiper', {
     510: {
       slidesPerView: 1.7,
     },
-    950: {
-      slidesPerView: 2.6,
-    },
-    1249: {
-      slidesPerView: 3.5,
+    768: {
+      slidesPerView: 2.2,
     },
   }
 });

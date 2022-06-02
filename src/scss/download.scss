@@ -1,6 +1,5 @@
 .download {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -11,7 +10,7 @@
   margin-bottom: 10px;
 
   &:not(:last-child) {
-    margin-right: 15px;
+    margin-right: 10px;
   }
   @media (min-width: $tablet-width) {
     &:not(:last-child) {

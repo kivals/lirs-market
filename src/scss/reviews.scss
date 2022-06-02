@@ -1,6 +1,11 @@
 .reviews {
   padding-top: 30px;
   padding-bottom: 30px;
+  @media (min-width: $tablet-width) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+  }
 }
 
 .reviews__img {
@@ -25,5 +30,16 @@
     background: $brand-text-color;
     opacity: 1;
     border: 2px solid $brand-background-color;
+  }
+}
+
+.reviews__marks-img {
+  width: 100%;
+  margin-bottom: 20px;
+  @media (min-width: $tablet-width) {
+    width: 300px;
+  }
+  @media (min-width: $desktop-width) {
+    width: 400px;
   }
 }
