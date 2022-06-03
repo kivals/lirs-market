@@ -1,0 +1,38 @@
+.map-black {
+  background-color: $brand-background-color;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  @media (min-width: $tablet-width) {
+    padding-top: 35px;
+    padding-bottom: 30px;
+  }
+  @media (min-width: $desktop-width) {
+    padding-top: 45px;
+    padding-bottom: 40px;
+  }
+}
+
+.map-black__img {
+  width: 100%;
+}
+
+.map-white {
+  background-color: #fff;
+}
+
+.map-white__img {
+  width: 100%;
+}
+
+.map-black__title {
+  font-size: 16px;
+  color: $brand-text-color;
+  text-align: center;
+  letter-spacing: 1px;
+  @media (min-width: $tablet-width) {
+    font-size: 24px;
+  }
+  @media (min-width: $desktop-width) {
+    font-size: 28px;
+  }
+}
