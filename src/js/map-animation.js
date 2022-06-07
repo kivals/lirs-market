@@ -1,6 +1,5 @@
-const TIMER_DELAY = 500;
+const TIMER_DELAY = 300;
 const btnStart = document.querySelector('.map-black__start');
-const btnRepeat = document.querySelector('.map-black__repeat');
 
 btnStart.addEventListener('click', btnStartClick);
 
