@@ -46,6 +46,8 @@ const copy = (done) => {
   gulp.src([
     PATH.source.fonts,
     PATH.source.ico,
+    SOURCE_DIR + '/css/swiper-bundle.min.css',
+    SOURCE_DIR + '/js/swiper/swiper-bundle.min.js',
     SOURCE_DIR + '/robots.txt',
     SOURCE_DIR + '/sitemap.xml',
 
