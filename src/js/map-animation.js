@@ -1,33 +1,44 @@
-const TIMER_DELAY = 300;
-const btnStart = document.querySelector('.map-black__start');
+const TIMER_DELAY = 150;
+const ANIMATION_ACTIVE_CLASS = 'active'
+const MAX_COUNTRY_COUNT = 52;
 
-btnStart.addEventListener('click', btnStartClick);
+const startAnimationElement = document.querySelector('.map-black__wrapper');
+const countElement = document.querySelector('.map-black__count');
 
-function btnStartClick() {
-  const countries = getCountriesData();
-  [].concat(...Object.values(countries)).forEach(el => el.classList.remove('active'));
-  showCountriesLight(Object.values(countries), TIMER_DELAY);
+const countriesData = getCountriesData();
+
+const mapObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const countryElements = Object.values(countriesData);
+    entry.isIntersecting ? goAnimation(countryElements) : clearAnimation(countryElements);
+  })
+})
+
+mapObserver.observe(startAnimationElement);
+
+function clearAnimation(elements) {
+  [].concat(...elements).forEach(el => el.classList.remove(ANIMATION_ACTIVE_CLASS));
 }
 
 /**
  * render-функция анимации с заданной задержкой
  * @param elements массив элементов анимации
- * @param delay задержка
  */
-function showCountriesLight(elements, delay) {
+function goAnimation(elements) {
   let i = 0;
-  const activeClassName = 'active';
 
   function startLight() {
+    countElement.innerHTML = (i + 1).toString();
     if (i === elements.length) {
+      countElement.innerHTML = MAX_COUNTRY_COUNT.toString();
       return;
     }
-    elements[i].forEach(el => el.classList.add(activeClassName));
+    elements[i].forEach(el => el.classList.add(ANIMATION_ACTIVE_CLASS));
     i++;
-    setTimeout(startLight, delay);
+    setTimeout(startLight, TIMER_DELAY);
   }
 
-  setTimeout(startLight, delay);
+  setTimeout(startLight, TIMER_DELAY);
 }
 
 /**
@@ -43,12 +54,3 @@ function getCountriesData() {
     return result;
   }, {})
 }
-
-function removeClass(styleClass, elements) {
-
-}
-
-
-
-
-
