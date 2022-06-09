@@ -1,4 +1,4 @@
-const TIMER_DELAY = 150;
+const TIMER_DELAY = 100;
 const ANIMATION_ACTIVE_CLASS = 'active'
 const MAX_COUNTRY_COUNT = 52;
 
