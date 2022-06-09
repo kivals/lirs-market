@@ -52,7 +52,7 @@
   }
 }
 
-.into__img {
+.intro__img {
   width: 250px;
   margin-bottom: 2vh;
   @media (min-width: $tablet-width) {
@@ -86,7 +86,7 @@
 }
 
 .intro__download {
-  .download--item {
+  .download__item {
     border: 2px solid rgba($brand-text-color, .7);
     border-radius: 8px;
     overflow: hidden;
