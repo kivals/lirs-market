@@ -12,7 +12,7 @@ const screenSlider = new Swiper('.screens__swiper', {
     },
   breakpoints: {
     320: {
-      slidesPerView: 1.2,
+      slidesPerView: 1.1,
     },
     380: {
       slidesPerView: 1.3,

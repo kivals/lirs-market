@@ -1,6 +1,7 @@
 const TIMER_DELAY = 100;
 const ANIMATION_ACTIVE_CLASS = 'active'
 const MAX_COUNTRY_COUNT = 52;
+let timerId = null;
 
 const startAnimationElement = document.querySelector('.map-black__wrapper');
 const countElement = document.querySelector('.map-black__count');
@@ -17,6 +18,7 @@ const mapObserver = new IntersectionObserver((entries) => {
 mapObserver.observe(startAnimationElement);
 
 function clearAnimation(elements) {
+  clearInterval(timerId);
   [].concat(...elements).forEach(el => el.classList.remove(ANIMATION_ACTIVE_CLASS));
 }
 
@@ -35,10 +37,10 @@ function goAnimation(elements) {
     }
     elements[i].forEach(el => el.classList.add(ANIMATION_ACTIVE_CLASS));
     i++;
-    setTimeout(startLight, TIMER_DELAY);
+    timerId = setTimeout(startLight, TIMER_DELAY);
   }
 
-  setTimeout(startLight, TIMER_DELAY);
+  timerId = setTimeout(startLight, TIMER_DELAY);
 }
 
 /**

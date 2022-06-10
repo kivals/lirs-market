@@ -84,20 +84,3 @@
     max-width: 750px;
   }
 }
-
-.intro__download {
-  .download__item {
-    border: 2px solid rgba($brand-text-color, .7);
-    border-radius: 8px;
-    overflow: hidden;
-    svg {
-      height: 40px;
-      @media (min-width: $tablet-width) {
-        height: 60px;
-      }
-      @media (min-width: $desktop-width) {
-        height: 70px;
-      }
-    }
-  }
-}

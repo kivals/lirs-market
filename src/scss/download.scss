@@ -9,12 +9,21 @@
   justify-content: center;
   margin-bottom: 10px;
 
+  border: 2px solid rgba($brand-text-color, .7);
+  border-radius: 8px;
+  overflow: hidden;
+
+  svg {
+    height: 40px;
+    @media (min-width: $tablet-width) {
+      height: 60px;
+    }
+    @media (min-width: $desktop-width) {
+      height: 70px;
+    }
+  }
+
   &:not(:last-child) {
     margin-right: 10px;
-  }
-  @media (min-width: $tablet-width) {
-    &:not(:last-child) {
-      margin-right: 15px;
-    }
   }
 }
