@@ -5,12 +5,19 @@
 }
 
 .available__title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-size: 25px;
   color: $brand-text-color;
   line-height: 1.23;
   font-weight: 500;
   margin-bottom: 15px;
   text-align: center;
+  @media (min-width: $tablet-width) {
+    display: block;
+    text-align: center;
+  }
 }
 
 .available__text {

@@ -1,6 +1,8 @@
 .intro {
-  height: 100vh;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
   background-color: #3a3a42;
+  padding-bottom: 5vh;
   @media (min-width: $tablet-width) {
     background-image: url("../img/intro/banner.jpg");
     background-size: cover;
@@ -19,17 +21,14 @@
 
 .intro-wrapper {
   padding-top: 20px;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: 100%;
   @media (min-width: $mobile-width-only) and (orientation: portrait) and (min-height: 525px) {
-    background-image: url("../img/intro/banner-mobile.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-position-y: bottom;
+    justify-content: space-around;
   }
   @media (orientation: landscape) {
     align-items: flex-start;
@@ -43,6 +42,7 @@
     margin-left: 250px;
   }
 }
+
 .intro__photo {
   display: flex;
   flex-direction: column;
@@ -52,23 +52,43 @@
   }
 }
 
-.intro__img {
-  width: 250px;
-  margin-bottom: 2vh;
+.intro__photo-mobile {
+  @media (min-width: $mobile-width-only) and (orientation: portrait) and (min-height: 525px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: auto;
+    margin-bottom: 20px;
+    img {
+      height: 50vh;
+    }
+  }
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+  @media (orientation: landscape) {
+    display: none;
+  }
+}
+
+.intro__logo-img {
+  width: 200px;
+  margin-bottom: 4vh;
   @media (min-width: $tablet-width) {
     margin-bottom: 8vh;
-    width: 300px;
+    width: 250px;
   }
   @media (min-width: $desktop-width) {
     margin-bottom: 10vh;
-    width: 450px;
+    width: 300px;
   }
 }
 
 .intro__text {
   color: #fff;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 20px;
+  font-weight: 600;
   line-height: 1.45;
   opacity: .9;
   text-transform: uppercase;
@@ -76,11 +96,11 @@
   margin-bottom: 3vh;
   text-align: center;
   @media (min-width: $tablet-width) {
-    font-size: 22px;
+    font-size: 24px;
     max-width: 550px;
   }
   @media (min-width: $desktop-width) {
-    font-size: 28px;
-    max-width: 750px;
+    font-size: 30px;
+    max-width: 700px;
   }
 }

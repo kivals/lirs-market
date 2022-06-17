@@ -11,15 +11,36 @@
   font-size: 15px;
   font-weight: 300;
   line-height: 1.45;
+  p {
+    margin-bottom: 10px;
+  }
   span {
     color: #000;
     font-weight: 600;
   }
   @media (min-width: $tablet-width) {
     font-size: 20px;
-    text-align: center;
     p {
       margin-bottom: 15px;
     }
+  }
+}
+
+.description__list {
+  margin-bottom: 15px;
+}
+
+.description__list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  &::before {
+    content: '';
+    background-image: url("../img/description/icon.svg");
+    background-repeat: no-repeat;
+    height: 16px;
+    width: 16px;
+    margin-right: 10px;
+    flex-shrink: 0;
   }
 }
