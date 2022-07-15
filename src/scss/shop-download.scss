@@ -1,0 +1,33 @@
+.shop-download {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #3a3a42;
+
+  &--mobile {
+    display: block;
+  }
+
+  &--tablet {
+    display: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    &--mobile {
+      display: none;
+    }
+
+    &--tablet {
+      display: block;
+    }
+
+    svg {
+      height: 50px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    svg {
+      height: 60px;
+    }
+  }
+}
