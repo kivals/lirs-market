@@ -1,0 +1,23 @@
+.nav-list {
+  li:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    text-decoration: none;
+    color: #f5d245;
+
+    @media (min-width: $tablet-width) {
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+    @media (min-width: $desktop-width) {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+  }
+}
