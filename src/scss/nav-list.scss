@@ -10,6 +10,7 @@
     margin-bottom: 15px;
     text-decoration: none;
     color: #f5d245;
+    transition: opacity .3s;
 
     @media (min-width: $tablet-width) {
       font-size: 24px;
@@ -19,5 +20,15 @@
       font-size: 28px;
       margin-bottom: 20px;
     }
+  }
+
+  &__link._active {
+    color: #FFFFFF;
+    opacity: .9;
+  }
+
+  &__link:hover {
+    color: #FFFFFF;
+    opacity: .9;
   }
 }
