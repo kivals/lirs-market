@@ -1,11 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://www.lirsmarket.ru/</loc>
-        <lastmod>2022-05-30T16:24:04+01:00</lastmod>
-    </url>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/siteindex.xsd">
   <url>
-    <loc>https://www.lirsmarket.ru/shop.html</loc>
-    <lastmod>2022-05-30T16:24:04+01:00</lastmod>
+    <loc>https://lirsmarket.ru/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/buysell.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/riding.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/waiting.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/shop.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/transportation.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/veterinary.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/job.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/art.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://lirsmarket.ru/travel.html</loc>
+    <priority>0.9</priority>
   </url>
 </urlset>
